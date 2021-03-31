@@ -15,7 +15,7 @@ def connect():
         "user": "postgres",
         "password": "SYS"
     }
-    return  psycopg2.connect(**params)
+    return psycopg2.connect(**params)
 
 
 def import_csv(path: str):
@@ -28,7 +28,8 @@ def import_csv(path: str):
         .format(column_list)
     logging.info(table_ddl)
 
-    sql = "COPY data_exploration FROM STDIN WITH (FORMAT CSV, DELIMITER '\t', " \
+    sql = "COPY data_exploration FROM STDIN WITH " \
+          + "(FORMAT CSV, DELIMITER '\t', " \
           + "NULL '(null)', HEADER TRUE, QUOTE '\"')"
     index_ddl = "CREATE INDEX IF NOT EXISTS de_{name}_idx ON data_exploration ({name})"
     with connect() as connection:
