@@ -25,7 +25,6 @@
 #
 
 import logging
-
 import psycopg2
 
 
@@ -52,3 +51,8 @@ def test_connection ():
 
         cursor.close()
     logging.info('Database connection closed.')
+
+
+if __name__ == '__main__':
+    logging.getLogger().setLevel(logging.DEBUG)
+    test_connection()

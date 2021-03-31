@@ -26,6 +26,8 @@
 
 import csv
 import gzip
+import logging
+import sys
 from collections import OrderedDict
 
 
@@ -42,3 +44,9 @@ def get_columns(path: str):
             for c in reader.fieldnames
         })
         return columns
+
+
+if __name__ == '__main__':
+    logging.getLogger().setLevel(logging.DEBUG)
+    cols = get_columns(sys.argv[1])
+    print(cols)
