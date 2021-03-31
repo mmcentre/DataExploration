@@ -1,0 +1,6 @@
+CREATE DATABASE superset;
+CREATE USER superset WITH PASSWORD 'secret1';
+GRANT ALL PRIVILEGES ON DATABASE "superset" to superset;
+CREATE DATABASE student;
+CREATE USER student WITH PASSWORD 'secret2';
+GRANT ALL PRIVILEGES ON DATABASE "student" to student;
