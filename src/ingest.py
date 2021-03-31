@@ -7,13 +7,13 @@ from typing import List, Sequence
 import psycopg2
 import logging
 
-
+# URL: postgresql+psycopg2://student:secret2@postgres:5432/student
 def connect():
     params = {
         "host": "localhost",
-        "database": "nsaph",
-        "user": "postgres",
-        "password": "SYS"
+        "database": "student",
+        "user": "student",
+        "password": "secret2"
     }
     return psycopg2.connect(**params)
 
