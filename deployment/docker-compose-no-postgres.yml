@@ -28,6 +28,7 @@ services:
       - redis
     environment:
       MAPBOX_API_KEY: ${MAPBOX_API_KEY}
+      POSTGRES_HOST: host.docker.internal
       SUPERSET_CONFIG_PATH: /etc/superset/superset-config.py
     ports:
       - "8088:8088"

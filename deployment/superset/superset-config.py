@@ -20,6 +20,7 @@ from cachelib import RedisCache
 
 MAPBOX_COURSE_KEY = 'pk.eyJ1IjoibW1jZW50cmUiLCJhIjoiY2ttd3I3d2lhMDgyODJvcTlzZnQ3bTJsayJ9.Lc_Y2ZtmhmcKZIMG-UWY6Q'
 MAPBOX_API_KEY = os.getenv('MAPBOX_API_KEY', MAPBOX_COURSE_KEY)
+POSTGRES_HOST = os.getenv('POSTGRES_HOST', "postgres")
 CACHE_CONFIG = {
 	'CACHE_TYPE': 'redis',
 	'CACHE_DEFAULT_TIMEOUT': 300,
@@ -30,7 +31,8 @@ CACHE_CONFIG = {
 	'CACHE_REDIS_URL': 'redis://redis:6379/1'}
 
 SQLALCHEMY_DATABASE_URI = \
-	'postgresql+psycopg2://superset:secret1@postgres:5432/superset'
+	'postgresql+psycopg2://superset:secret1@{}:5432/superset'\
+		.format(POSTGRES_HOST)
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 SECRET_KEY = 'thisISaSECRET_1234'
 
