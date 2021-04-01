@@ -25,7 +25,7 @@
 #
 
 import logging
-from src.connection import connect
+from excersizes.connection import connect
 
 
 def query():

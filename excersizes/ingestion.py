@@ -28,8 +28,8 @@ import gzip
 import logging
 import sys
 
-from src.connection import connect
-from src.introspection import get_columns
+from excersizes.connection import connect
+from excersizes.introspection import get_columns
 
 
 def import_csv(path: str):
