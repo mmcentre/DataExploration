@@ -34,7 +34,8 @@ def connect():
         "host": "localhost",
         "database": "student",
         "user": "student",
-        "password": "secret2"
+        "password": "secret2",
+        "port": 8432
     }
     return psycopg2.connect(**params)
 
